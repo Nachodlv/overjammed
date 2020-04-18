@@ -4,7 +4,7 @@ using UnityEngine.Experimental.Rendering.Universal;
 
 namespace DefaultNamespace
 {
-    public class Interactable : UnityEngine.MonoBehaviour
+    public class Interactable : MonoBehaviour
     {
         [SerializeField] private Light2D pointLight;
 

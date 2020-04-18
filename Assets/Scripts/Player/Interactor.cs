@@ -5,6 +5,7 @@ using Utils;
 
 namespace Player
 {
+    [RequireComponent(typeof(Grabber))]
     public class Interactor: MonoBehaviour
     {
         [SerializeField] private float interactReach;
@@ -12,8 +13,10 @@ namespace Player
         
         private DistanceDetector _distanceDetector;
         private Interactable _currentHighlighted;
+        private Grabber _grabber;
         private void Awake()
         {
+            _grabber = GetComponent<Grabber>();
             SetUpDistanceDetector();
         }
 
@@ -25,6 +28,9 @@ namespace Player
         private void Interact()
         {
             _currentHighlighted?.Interact();
+            var grabbable = _currentHighlighted?.GetComponent<Grabbable>();
+            if(grabbable != null)
+                _grabber.Grab(grabbable);
         }
 
         private void HighlightNearestInteractable(Collider2D collider2D)
