@@ -13,7 +13,6 @@ namespace Player
         [SerializeField] private string interactableTag = "Interactable";
         
         public Grabber Grabber { get; private set; }
-
         
         private DistanceDetector _distanceDetector;
         private Interactable _currentHighlighted;
