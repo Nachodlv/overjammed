@@ -425,7 +425,7 @@ GameObject:
   - component: {fileID: 8267754213633629282}
   - component: {fileID: 8267754213633629293}
   - component: {fileID: 8267754213633629292}
-  - component: {fileID: 1482814205443405742}
+  - component: {fileID: 638072860736363622}
   m_Layer: 5
   m_Name: Statbar
   m_TagString: Untagged
@@ -537,7 +537,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1482814205443405742
+--- !u!114 &638072860736363622
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -546,14 +546,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 8267754213633629294}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b571b3bc9cd54aefb8416035145ddc2c, type: 3}
+  m_Script: {fileID: 11500000, guid: eda740a55efa64085b8de7f21813b1a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   currentValueText: {fileID: 370349054893681172}
   maxValueText: {fileID: 404149295328363991}
   statBarImage: {fileID: 8267754214013681509}
-  maxValue: 5
-  currentValue: 5
+  maxValue: 0
+  currentValue: 0
 --- !u!1 &8267754214013681511
 GameObject:
   m_ObjectHideFlags: 0
@@ -617,7 +617,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1843197933104017171, guid: 0c604cc482738557da2e0d13a097d30c,
+  m_Sprite: {fileID: -1843197933104017171, guid: 2e46b1ee84eb254d1962f97acfddfddb,
     type: 3}
   m_Type: 3
   m_PreserveAspect: 0

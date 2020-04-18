@@ -5,14 +5,14 @@ namespace Programmer
 {
     public class NecessityController: MonoBehaviour
     {
-        private const float MAX_STRESS_LEVEL = 100;
+        public const float MAX_STRESS_LEVEL = 100;
 
         [SerializeField] private NecessityDisplayer _necessityDisplayer;
         [SerializeField] private float stressDecreaseRatio = 1f;
         
         private Necessity[] _necessities;
         private List<Necessity> _necessitiesOnNeed;
-        private float _stressLevel;
+        public float StressLevel { get; private set; }
         
         private void Awake()
         {
@@ -53,16 +53,16 @@ namespace Programmer
         {
             if (_necessitiesOnNeed.Count == 0)
             {
-                var newStress = _stressLevel - stressDecreaseRatio * Time.deltaTime;
-                _stressLevel = newStress < 0 ? 0 : newStress;
+                var newStress = StressLevel - stressDecreaseRatio * Time.deltaTime;
+                StressLevel = newStress < 0 ? 0 : newStress;
                 return;
             }
             for (var i = 0; i < _necessitiesOnNeed.Count; i++)
             {
-                _stressLevel += _necessitiesOnNeed[i].StressLevel * Time.deltaTime;
+                StressLevel += _necessitiesOnNeed[i].StressLevel * Time.deltaTime;
             }
-            Debug.Log($"Stress level: {_stressLevel}");
-            if(_stressLevel >= MAX_STRESS_LEVEL) Debug.Log("Game Over");
+            Debug.Log($"Stress level: {StressLevel}");
+            if(StressLevel >= MAX_STRESS_LEVEL) Debug.Log("Game Over");
         }
     }
 }
