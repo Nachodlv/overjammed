@@ -16,6 +16,7 @@ namespace Player
         
         private DistanceDetector _distanceDetector;
         private Interactable _currentHighlighted;
+        private bool _hasHighlighted;
         private void Awake()
         {
             Grabber = GetComponent<Grabber>();
@@ -29,8 +30,9 @@ namespace Player
 
         private void Interact()
         {
-            _currentHighlighted?.Interact(this);
-            var grabbable = _currentHighlighted?.GetComponent<Grabbable>();
+            if (!_hasHighlighted) return;
+            _currentHighlighted.Interact(this);
+            var grabbable = _currentHighlighted.GetComponent<Grabbable>();
             if(grabbable != null)
                 Grabber.Grab(grabbable);
         }
@@ -38,15 +40,19 @@ namespace Player
         private void HighlightNearestInteractable(Collider2D collider2D)
         {
             var interactable = collider2D.GetComponent<Interactable>();
-            _currentHighlighted?.UnHighlight();
+            if(_hasHighlighted) _currentHighlighted.UnHighlight();
             interactable.Highlight();
             _currentHighlighted = interactable;
+            _hasHighlighted = true;
         }
 
         private void UnHighlightInteractable(Collider2D collider2D)
         {
-            if(collider2D.gameObject == _currentHighlighted.gameObject) 
+            if (_hasHighlighted && collider2D.gameObject == _currentHighlighted.gameObject)
+            {
                 _currentHighlighted?.UnHighlight();
+                _hasHighlighted = false;
+            }
         }
         
         private void SetUpDistanceDetector()
