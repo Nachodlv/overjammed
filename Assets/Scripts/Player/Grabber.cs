@@ -9,8 +9,8 @@ namespace Player
     {
         [SerializeField] private Image image;
         
-        private Grabbable _grabbable;
-        private bool _hasGrabbable;
+        public Grabbable Grabbable { get; private set; }
+        public bool HasGrabbable { get; private set; }
 
         private void Awake()
         {
@@ -19,11 +19,17 @@ namespace Player
 
         public void Grab(Grabbable grabbable)
         {
-            if (!_hasGrabbable) image.enabled = true;
+            if (!HasGrabbable) image.enabled = true;
             
-            _grabbable = grabbable;
-            _hasGrabbable = true;
+            Grabbable = grabbable;
+            HasGrabbable = true;
             image.sprite = grabbable.Sprite;
+        }
+
+        public void TakeGrabbable()
+        {
+            HasGrabbable = false;
+            image.enabled = false;
         }
     }
 }

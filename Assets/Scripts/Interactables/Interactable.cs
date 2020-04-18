@@ -1,22 +1,24 @@
 using System;
+using Player;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
 
-namespace DefaultNamespace
+namespace Interactables
 {
     public class Interactable : MonoBehaviour
     {
         [SerializeField] private Light2D pointLight;
 
-
+        public event Action<Interactor> OnInteract; 
+        
         private void Awake()
         {
             pointLight.enabled = false;
         }
 
-        public void Interact()
+        public void Interact(Interactor interactor)
         {
-                
+            OnInteract?.Invoke(interactor);
         }
         public void Highlight()
         {

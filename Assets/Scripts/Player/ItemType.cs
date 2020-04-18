@@ -2,6 +2,7 @@ namespace Player
 {
     public enum ItemType
     {
-        Coffee
+        Drink,
+        Food
     }
 }

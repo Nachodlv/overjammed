@@ -1,23 +1,31 @@
+using System;
 using System.Collections.Generic;
+using DefaultNamespace;
+using Interactables;
+using Player;
 using UnityEngine;
 
 namespace Programmer
 {
+    [RequireComponent(typeof(Interactable))]
     public class NecessityController: MonoBehaviour
     {
         public const float MAX_STRESS_LEVEL = 100;
 
         [SerializeField] private NecessityDisplayer _necessityDisplayer;
         [SerializeField] private float stressDecreaseRatio = 1f;
-        
+
+        public event Action<Interactor> OnInteract;
+        public float StressLevel { get; private set; }
+
         private Necessity[] _necessities;
         private List<Necessity> _necessitiesOnNeed;
-        public float StressLevel { get; private set; }
         
         private void Awake()
         {
             _necessities = GetComponentsInChildren<Necessity>();
             _necessitiesOnNeed = new List<Necessity>(_necessities.Length);
+            GetComponent<Interactable>().OnInteract += OnInteract;
             SubscribeToOnNeed();
         }
 

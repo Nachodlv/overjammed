@@ -1,15 +1,22 @@
+using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Programmer
 {
     public class NecessityDisplayer : MonoBehaviour
     {
-        [SerializeField] private SpriteRenderer spriteToRender;
-        
+        [SerializeField] private Image image;
+
+        private void Awake()
+        {
+            gameObject.SetActive(false);
+        }
+
         public void DisplayNecessity(Necessity necessity)
         {
             gameObject.SetActive(true);
-            spriteToRender.sprite = necessity.Sprite;
+            image.sprite = necessity.Sprite;
         }
 
         public void HideNecessity()

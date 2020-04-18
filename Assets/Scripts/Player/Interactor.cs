@@ -1,4 +1,5 @@
 using DefaultNamespace;
+using Interactables;
 using UnityEngine;
 using Utils;
 // ReSharper disable Unity.NoNullPropagation
@@ -11,12 +12,14 @@ namespace Player
         [SerializeField] private float interactReach;
         [SerializeField] private string interactableTag = "Interactable";
         
+        public Grabber Grabber { get; private set; }
+
+        
         private DistanceDetector _distanceDetector;
         private Interactable _currentHighlighted;
-        private Grabber _grabber;
         private void Awake()
         {
-            _grabber = GetComponent<Grabber>();
+            Grabber = GetComponent<Grabber>();
             SetUpDistanceDetector();
         }
 
@@ -27,10 +30,10 @@ namespace Player
 
         private void Interact()
         {
-            _currentHighlighted?.Interact();
+            _currentHighlighted?.Interact(this);
             var grabbable = _currentHighlighted?.GetComponent<Grabbable>();
             if(grabbable != null)
-                _grabber.Grab(grabbable);
+                Grabber.Grab(grabbable);
         }
 
         private void HighlightNearestInteractable(Collider2D collider2D)
