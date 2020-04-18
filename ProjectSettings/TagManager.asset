@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Interactable
   layers:
   - Default
   - TransparentFX
@@ -14,7 +15,7 @@ TagManager:
   - 
   - 
   - Player
-  - 
+  - Interactable
   - 
   - 
   - 
@@ -41,6 +42,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Necessity Displayer
-    uniqueID: 3531404243
+  - name: Background
+    uniqueID: 2219028597
+    locked: 0
+  - name: Foreground
+    uniqueID: 1068170403
     locked: 0
