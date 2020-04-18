@@ -11,7 +11,8 @@ namespace Player
         private Rigidbody2D _rigidbody2D;
         private SpriteRenderer _spriteRenderer;
         private Vector2 _velocity;
-        private static readonly int XSpeed = Animator.StringToHash("speed");
+        private static readonly int XSpeed = Animator.StringToHash("x_speed");
+        private static readonly int YSpeed = Animator.StringToHash("y_speed");
 
         private void Awake()
         {
@@ -25,7 +26,7 @@ namespace Player
             var y = Input.GetAxis("Vertical");
         
             _velocity = new Vector2(x, y) * speed;
-            animator.SetFloat(XSpeed, Mathf.Abs(x + y));
+            animator.SetFloat(YSpeed, y > 0 ? y : y - Mathf.Abs(x));
             
            _spriteRenderer.sortingOrder = Mathf.RoundToInt(transform.position.y * 100f) * -1;
         }
