@@ -7,11 +7,11 @@ namespace Programmer
         [SerializeField] private Sprite sprite;
         [SerializeField, Tooltip("How much it affect the stress level")]
         private float stressLevel;
-        [SerializeField] private float increaseRatio = 5f;
+        [SerializeField] protected float increaseRatio = 5f;
 
         public delegate void NeedChange(Necessity necessityOnNeed);
         public event NeedChange OnNeed;
-        public abstract event NeedChange OnSatisfied;
+        public event NeedChange OnSatisfied;
         
         public Sprite Sprite => sprite;
         public float StressLevel => stressLevel;
@@ -28,9 +28,21 @@ namespace Programmer
             
             if (!InvokedNeed && CurrentNeed >= MinimumNeed)
             {
-                OnNeed?.Invoke(this);
-                InvokedNeed = true;
+                Need();
             }
+        }
+        
+        protected void Satisfy()
+        {
+            CurrentNeed = 0;
+            InvokedNeed = false;
+            OnSatisfied?.Invoke(this);
+        }
+
+        protected void Need()
+        {
+            OnNeed?.Invoke(this);
+            InvokedNeed = true;
         }
     }
 }

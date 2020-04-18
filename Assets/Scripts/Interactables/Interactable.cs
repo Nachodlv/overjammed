@@ -17,14 +17,14 @@ namespace Interactables
         private bool _hasAudioClip;
         private static readonly int InteractTrigger = Animator.StringToHash("interact");
 
-        private void Awake()
+        protected virtual void Awake()
         {
             pointLight.enabled = false;
             _hasAnimator = animator != null;
             _hasAudioClip = audioClip != null;
         }
 
-        public void Interact(Interactor interactor)
+        public virtual void Interact(Interactor interactor)
         {
             OnInteract?.Invoke(interactor);
             if(_hasAnimator) animator.SetTrigger(InteractTrigger);

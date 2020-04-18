@@ -9,8 +9,6 @@ namespace Programmer.Necessities
     {
         [SerializeField] private Interactable interactable;
         
-        public override event NeedChange OnSatisfied;
-
         private void Awake()
         {
             interactable.OnInteract += Interact;
@@ -19,7 +17,7 @@ namespace Programmer.Necessities
         private void Interact(Interactor interactor)
         {
             if (CurrentNeed < MinimumNeed) return;
-            
+            Satisfy();
         }
     }
 }
