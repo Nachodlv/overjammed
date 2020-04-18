@@ -1,18 +1,26 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Mover : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private float speed;
+
+    private Transform _transform;
+    private Vector2 _velocity;
+    private void Awake()
     {
-        
+        _transform = transform;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
+        var x = Input.GetAxis("Horizontal");
+        var y = Input.GetAxis("Vertical");
         
+        _velocity = new Vector2(x, y) * speed;
+    }
+
+    private void FixedUpdate()
+    {
+        _transform.position += (Vector3) _velocity * Time.fixedDeltaTime;
     }
 }
