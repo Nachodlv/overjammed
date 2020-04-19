@@ -13,6 +13,7 @@ namespace Sound
         [SerializeField] private AudioClip mainMusic;
         
         public static AudioManager Instance;
+        public bool Muted { get; private set; }
 
         private AudioSource _audioSource;
         private ObjectPooler<AudioSourcePooleable> _pooler;
@@ -26,11 +27,11 @@ namespace Sound
             else
             {
                 Instance = this;
+                DontDestroyOnLoad(this);
             }
             
             _audioSource = GetComponent<AudioSource>();
-            _pooler = new ObjectPooler<AudioSourcePooleable>();
-            _pooler.InstantiateObjects(audioSourceQuantity, audioSourcePrefab, "Audio Sources");
+            PoolAudioSources();
         }
 
         private void Start()
@@ -42,11 +43,34 @@ namespace Sound
 
         public void PlaySound(AudioClip clip, float volume = 1)
         {
+            if (Muted) return;
             var audioSource = _pooler.GetNextObject();
             audioSource.SetClip(clip);
             audioSource.SetVolume(volume);
             audioSource.StartClip();
         }
+        
+        public void PlaySound(AudioClip clip)
+        {
+            PlaySound(clip, 1);
+        }
 
+        public void Mute()
+        {
+            _audioSource.Pause();
+            Muted = true;
+        }
+
+        public void UnMute()
+        {
+            _audioSource.UnPause();
+            Muted = false;
+        }
+
+        public void PoolAudioSources()
+        {
+            _pooler = new ObjectPooler<AudioSourcePooleable>();
+            _pooler.InstantiateObjects(audioSourceQuantity, audioSourcePrefab, "Audio Sources");
+        }
     }
 }

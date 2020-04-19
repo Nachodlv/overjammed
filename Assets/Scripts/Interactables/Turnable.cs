@@ -23,6 +23,7 @@ namespace Interactables
         private Material _material;
         private bool _isWorking = true;
         private Coroutine _coroutine;
+        private bool _hasAudio;
         
         protected override void Awake()
         {
@@ -31,6 +32,7 @@ namespace Interactables
             _material = _spriteRenderer.material;
             _material.color = workingColor;
             CalculateBreakingTime();
+            _hasAudio = soundOnBreak != null;
         }
 
         public override void Interact(Interactor interactor)
@@ -54,7 +56,7 @@ namespace Interactables
             yield return new WaitForSeconds(breakingTime);
             _isWorking = false;
             _material.color = notWorkingColor;
-            AudioManager.Instance.PlaySound(soundOnBreak);
+            if(_hasAudio) AudioManager.Instance.PlaySound(soundOnBreak);
             OnStopWorking?.Invoke();
         }
     }
