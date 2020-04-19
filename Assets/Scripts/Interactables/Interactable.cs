@@ -28,7 +28,7 @@ namespace Interactables
         {
             OnInteract?.Invoke(interactor);
             if(_hasAnimator) animator.SetTrigger(InteractTrigger);
-            if(_hasAudioClip) AudioManager.Instance.PlaySoundOnPosition(audioClip, transform.position);
+            if(_hasAudioClip) AudioManager.Instance.PlaySound(audioClip);
         }
         public void Highlight()
         {

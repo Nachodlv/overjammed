@@ -33,10 +33,9 @@ namespace Sound
         }
 
 
-        public void PlaySoundOnPosition(AudioClip clip, Vector2 position, float volume = 1)
+        public void PlaySound(AudioClip clip, float volume = 1)
         {
             var audioSource = _pooler.GetNextObject();
-            audioSource.Transform.position = position;
             audioSource.SetClip(clip);
             audioSource.SetVolume(volume);
             audioSource.StartClip();
