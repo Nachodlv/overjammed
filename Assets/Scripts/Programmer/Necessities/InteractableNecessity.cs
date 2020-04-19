@@ -32,7 +32,7 @@ namespace Programmer.Necessities
         
         private void Interact(Interactor interactor)
         {
-            if (CurrentNeed < MinimumNeed) return;
+            if (!Active || CurrentNeed < MinimumNeed) return;
             if(_hasSatisfyClip) AudioManager.Instance.PlaySound(satisfyClip);
             if(_hasAnimator) animator.SetTrigger(SatisfyTrigger);
             Satisfy();

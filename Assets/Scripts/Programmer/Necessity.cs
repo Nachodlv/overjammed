@@ -12,9 +12,9 @@ namespace Programmer
         public delegate void NeedChange(Necessity necessityOnNeed);
         public event NeedChange OnNeed;
         public event NeedChange OnSatisfied;
-        
         public Sprite Sprite => sprite;
         public float StressLevel => stressLevel;
+        public bool Active { get; set; }
 
         protected float CurrentNeed;
         protected float MinimumNeed = 50;
@@ -37,6 +37,7 @@ namespace Programmer
             CurrentNeed = 0;
             InvokedNeed = false;
             OnSatisfied?.Invoke(this);
+            Active = false;
         }
 
         protected void Need()

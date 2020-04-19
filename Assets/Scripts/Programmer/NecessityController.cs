@@ -1,5 +1,7 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using DefaultNamespace;
 using Interactables;
 using Player;
@@ -20,10 +22,12 @@ namespace Programmer
 
         private Necessity[] _necessities;
         private List<Necessity> _necessitiesOnNeed;
+        private Func<Necessity, IEnumerator> _activeNextNecessity;
         
         private void Awake()
         {
             _necessities = GetComponentsInChildren<Necessity>();
+            _activeNextNecessity = ActiveNextNecessity;
             _necessitiesOnNeed = new List<Necessity>(_necessities.Length);
             GetComponent<Interactable>().OnInteract += OnInteract;
             SubscribeToOnNeed();
@@ -45,15 +49,22 @@ namespace Programmer
 
         private void NecessityOnNeed(Necessity necessity)
         {
-            if(_necessitiesOnNeed.Count == 0) _necessityDisplayer.DisplayNecessity(necessity);
+            if (_necessitiesOnNeed.Count == 0)
+            {
+                _necessityDisplayer.DisplayNecessity(necessity);
+                necessity.Active = true;
+            }
             _necessitiesOnNeed.Add(necessity);
         }
 
         private void NecessitySatisfied(Necessity necessity)
         {
             _necessitiesOnNeed.Remove(necessity);
-            if(_necessitiesOnNeed.Count > 0) 
+            if (_necessitiesOnNeed.Count > 0)
+            {
                 _necessityDisplayer.DisplayNecessity(_necessitiesOnNeed[0]);
+                StartCoroutine(_activeNextNecessity(_necessitiesOnNeed[0]));
+            }
             else _necessityDisplayer.HideNecessity();
         }
 
@@ -71,6 +82,12 @@ namespace Programmer
             }
             Debug.Log($"Stress level: {StressLevel}");
             if(StressLevel >= MAX_STRESS_LEVEL) Debug.Log("Game Over");
+        }
+
+        private IEnumerator ActiveNextNecessity(Necessity necessity)
+        {
+            yield return null;
+            necessity.Active = true;
         }
     }
 }

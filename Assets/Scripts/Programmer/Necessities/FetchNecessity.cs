@@ -13,7 +13,7 @@ namespace Programmer.Necessities
 
         private void Interact(Interactor interactor)
         {
-            if (CurrentNeed < MinimumNeed) return;
+            if (!Active || CurrentNeed < MinimumNeed) return;
             var grabber = interactor.GetComponent<Grabber>();
             if (grabber == null || !grabber.HasGrabbable || grabber.Grabbable.ItemType != itemType) return;
             grabber.TakeGrabbable();
