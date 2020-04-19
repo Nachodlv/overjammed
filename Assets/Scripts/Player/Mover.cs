@@ -8,6 +8,17 @@ namespace Player
         [SerializeField] private float speed;
         [SerializeField] private Animator animator;
 
+        public bool Active
+        {
+            get => _active;
+            set
+            {
+                if(!value) ChangeVelocity(Vector2.zero);
+                _active = value;
+            }
+        }
+
+        private bool _active;
         private Rigidbody2D _rigidbody2D;
         private SpriteRenderer _spriteRenderer;
         private Vector2 _velocity;
@@ -16,17 +27,18 @@ namespace Player
 
         private void Awake()
         {
+            Active = true;
             _rigidbody2D = GetComponent<Rigidbody2D>();
             _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         }
 
         private void Update()
         {
+            if (!Active) return;
             var x = Input.GetAxis("Horizontal");
             var y = Input.GetAxis("Vertical");
         
-            _velocity = new Vector2(x, y) * speed;
-            animator.SetFloat(YSpeed, y > 0 ? y : y - Mathf.Abs(x));
+            ChangeVelocity(new Vector2(x, y) * speed);
             
            _spriteRenderer.sortingOrder = Mathf.RoundToInt(transform.position.y * 100f) * -1;
         }
@@ -34,6 +46,14 @@ namespace Player
         private void FixedUpdate()
         {
             _rigidbody2D.position += _velocity * Time.fixedDeltaTime;
+        }
+
+        private void ChangeVelocity(Vector2 newVelocity)
+        {
+            _velocity = newVelocity;
+            var y = _velocity.y;
+            var x = _velocity.x;
+            animator.SetFloat(YSpeed, y > 0 ? y : y - Mathf.Abs(x));
         }
     }
 }

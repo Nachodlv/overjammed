@@ -1042,6 +1042,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0.5178673
       objectReference: {fileID: 0}
+    - target: {fileID: 2243849459279314249, guid: 76f509d55419d12c49eb67e3fa05a943,
+        type: 3}
+      propertyPath: increaseRatio
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3741272909098468366, guid: 76f509d55419d12c49eb67e3fa05a943,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -1085,17 +1090,22 @@ PrefabInstance:
     - target: {fileID: 3741272909252223098, guid: 76f509d55419d12c49eb67e3fa05a943,
         type: 3}
       propertyPath: increaseRatio
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3741272909252223098, guid: 76f509d55419d12c49eb67e3fa05a943,
         type: 3}
       propertyPath: stressLevel
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3741272910020211101, guid: 76f509d55419d12c49eb67e3fa05a943,
         type: 3}
       propertyPath: stressLevel
-      value: 1
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3741272910020211101, guid: 76f509d55419d12c49eb67e3fa05a943,
+        type: 3}
+      propertyPath: increaseRatio
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3741272910133810704, guid: 76f509d55419d12c49eb67e3fa05a943,
         type: 3}
@@ -1232,7 +1242,12 @@ PrefabInstance:
     - target: {fileID: 3741272910842977394, guid: 76f509d55419d12c49eb67e3fa05a943,
         type: 3}
       propertyPath: stressLevel
-      value: 1
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3741272910842977394, guid: 76f509d55419d12c49eb67e3fa05a943,
+        type: 3}
+      propertyPath: increaseRatio
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4708334484257085217, guid: 76f509d55419d12c49eb67e3fa05a943,
         type: 3}
@@ -3701,9 +3716,24 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0.561783
       objectReference: {fileID: 0}
+    - target: {fileID: 2243849459279314249, guid: 76f509d55419d12c49eb67e3fa05a943,
+        type: 3}
+      propertyPath: increaseRatio
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3741272909098468367, guid: 76f509d55419d12c49eb67e3fa05a943,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3741272909252223098, guid: 76f509d55419d12c49eb67e3fa05a943,
         type: 3}
       propertyPath: stressLevel
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3741272909252223098, guid: 76f509d55419d12c49eb67e3fa05a943,
+        type: 3}
+      propertyPath: increaseRatio
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3741272909799508081, guid: 76f509d55419d12c49eb67e3fa05a943,
@@ -3714,7 +3744,12 @@ PrefabInstance:
     - target: {fileID: 3741272910020211101, guid: 76f509d55419d12c49eb67e3fa05a943,
         type: 3}
       propertyPath: stressLevel
-      value: 1
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3741272910020211101, guid: 76f509d55419d12c49eb67e3fa05a943,
+        type: 3}
+      propertyPath: increaseRatio
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3741272910133810705, guid: 76f509d55419d12c49eb67e3fa05a943,
         type: 3}
@@ -3794,6 +3829,11 @@ PrefabInstance:
     - target: {fileID: 3741272910842977394, guid: 76f509d55419d12c49eb67e3fa05a943,
         type: 3}
       propertyPath: stressLevel
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3741272910842977394, guid: 76f509d55419d12c49eb67e3fa05a943,
+        type: 3}
+      propertyPath: increaseRatio
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4708334484257085217, guid: 76f509d55419d12c49eb67e3fa05a943,
