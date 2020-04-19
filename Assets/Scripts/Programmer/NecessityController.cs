@@ -15,7 +15,8 @@ namespace Programmer
         [SerializeField] private NecessityDisplayer _necessityDisplayer;
         [SerializeField] private float stressDecreaseRatio = 1f;
         public float StressLevel { get; private set; }
-
+        public event Action OnMaxStressLevel;
+        
         private Necessity[] _necessities;
         private List<Necessity> _necessitiesOnNeed;
         private Func<Necessity, IEnumerator> _activeNextNecessity;
@@ -70,7 +71,7 @@ namespace Programmer
 
         private void UpdateStressLevel()
         {
-            if(StressLevel >= MAX_STRESS_LEVEL) return;
+            if(StressLevel >= MAX_STRESS_LEVEL) OnMaxStressLevel?.Invoke();
             if (_necessitiesOnNeed.Count == 0)
             {
                 var newStress = StressLevel - stressDecreaseRatio * Time.deltaTime;
