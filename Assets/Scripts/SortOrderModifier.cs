@@ -8,7 +8,18 @@ namespace DefaultNamespace
     {
         [SerializeField] private float extraYAxis;
 
+        public float ExtraYAxis
+        {
+            get => extraYAxis;
+            set => extraYAxis = value;
+        }
+
         private void Awake()
+        {
+            PositionChanged();
+        }
+
+        public void PositionChanged()
         {
             GetComponent<SpriteRenderer>().sortingOrder =
                 Mathf.RoundToInt((transform.position.y + extraYAxis) * 100f) * -1;
