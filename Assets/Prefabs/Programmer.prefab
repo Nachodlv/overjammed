@@ -302,6 +302,7 @@ MonoBehaviour:
   stressLevel: 3
   increaseRatio: 3
   itemType: 1
+  interactable: {fileID: 3741272910133810711}
 --- !u!1 &3741272909498537011
 GameObject:
   m_ObjectHideFlags: 0
@@ -523,6 +524,7 @@ MonoBehaviour:
   stressLevel: 4
   increaseRatio: 5
   itemType: 0
+  interactable: {fileID: 3741272910133810711}
 --- !u!1 &3741272910133810705
 GameObject:
   m_ObjectHideFlags: 0

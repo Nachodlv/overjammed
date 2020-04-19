@@ -1,3 +1,4 @@
+using Interactables;
 using Player;
 using UnityEngine;
 
@@ -6,9 +7,10 @@ namespace Programmer.Necessities
     public class FetchNecessity : Necessity
     {
         [SerializeField] private ItemType itemType;
+        [SerializeField] private Interactable interactable;
         private void Awake()
         {
-            GetComponentInParent<NecessityController>().OnInteract += Interact;
+            interactable.OnInteract += Interact;
         }
 
         private void Interact(Interactor interactor)
@@ -20,4 +22,4 @@ namespace Programmer.Necessities
             Satisfy();
         }
     }
-}
+}    
