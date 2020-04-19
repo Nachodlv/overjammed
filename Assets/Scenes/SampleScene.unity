@@ -1537,6 +1537,7 @@ MonoBehaviour:
   audioSourceQuantity: 10
   audioSourcePrefab: {fileID: 6008810293876382756, guid: cbf65fe4fb835b14c8dbd905351790d1,
     type: 3}
+  mainMusic: {fileID: 8300000, guid: 98f3afdb39ed409629c73d41de0ed303, type: 3}
 --- !u!82 &546191951
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2836,7 +2837,7 @@ MonoBehaviour:
   notWorkingColor: {r: 1.4980392, g: 0, b: 0, a: 1}
   minimumSecondsBeforeBreaking: 5
   maximumSecondsBeforeBreaking: 10
-  soundOnBreak: {fileID: 8300000, guid: 86f7e3188e3c15576ade3261f460f7b9, type: 3}
+  soundOnBreak: {fileID: 8300000, guid: 417975c5b4a28e31885f65c976453b34, type: 3}
 --- !u!114 &1743527752
 MonoBehaviour:
   m_ObjectHideFlags: 0

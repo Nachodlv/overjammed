@@ -10,7 +10,8 @@ namespace Sound
     {
         [SerializeField] private int audioSourceQuantity;
         [SerializeField] private AudioSourcePooleable audioSourcePrefab;
-
+        [SerializeField] private AudioClip mainMusic;
+        
         public static AudioManager Instance;
 
         private AudioSource _audioSource;
@@ -32,6 +33,12 @@ namespace Sound
             _pooler.InstantiateObjects(audioSourceQuantity, audioSourcePrefab, "Audio Sources");
         }
 
+        private void Start()
+        {
+            _audioSource.clip = mainMusic;
+            _audioSource.loop = true;
+            _audioSource.Play();
+        }
 
         public void PlaySound(AudioClip clip, float volume = 1)
         {
