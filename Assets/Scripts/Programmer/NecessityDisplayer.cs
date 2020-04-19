@@ -7,7 +7,7 @@ namespace Programmer
     public class NecessityDisplayer : MonoBehaviour
     {
         [SerializeField] private Image image;
-
+        
         private void Awake()
         {
             gameObject.SetActive(false);

@@ -1,7 +1,49 @@
 fileFormatVersion: 2
 guid: daf468ca69de27b11baec5ff9d022406
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 3785295418865347303
+    second: stress-bar_0
+  - first:
+      213: 7779264777021161609
+    second: stress-bar_1
+  - first:
+      213: -5141140543413035034
+    second: stress-bar_2
+  - first:
+      213: 9159496231200307521
+    second: stress-bar_3
+  - first:
+      213: 4852821227231738540
+    second: stress-bar_4
+  - first:
+      213: -4083158832401434821
+    second: stress-bar_5
+  - first:
+      213: -8427027127276711331
+    second: stress-bar_6
+  - first:
+      213: 6905320798704311440
+    second: stress-bar_7
+  - first:
+      213: 1116058998425124214
+    second: stress-bar_8
+  - first:
+      213: 7982347720868351426
+    second: stress-bar_9
+  - first:
+      213: 3055851661768966167
+    second: stress-bar_10
+  - first:
+      213: -625724482478969092
+    second: stress-bar_11
+  - first:
+      213: -1385753746012838226
+    second: stress-bar_12
+  - first:
+      213: 7677090455658962969
+    second: stress-bar_10
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -31,7 +73,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -40,7 +82,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -64,7 +106,31 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -73,7 +139,238 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: stress-bar_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 4
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7eae16bc022188430800000000000000
+      internalID: 3785295418865347303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stress-bar_1
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 1
+        width: 4
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9800e00391085fb60800000000000000
+      internalID: 7779264777021161609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stress-bar_2
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 1
+        width: 4
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6efd1892aeff6a8b0800000000000000
+      internalID: -5141140543413035034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stress-bar_3
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 1
+        width: 4
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 149393e0b411d1f70800000000000000
+      internalID: 9159496231200307521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stress-bar_4
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 1
+        width: 4
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: caa7f9fd13fa85340800000000000000
+      internalID: 4852821227231738540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stress-bar_5
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 1
+        width: 4
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b37b639eca4b557c0800000000000000
+      internalID: -4083158832401434821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stress-bar_6
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 1
+        width: 4
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d52571ed97f2d0b80800000000000000
+      internalID: -8427027127276711331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stress-bar_7
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 1
+        width: 4
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09c13e23ea0a4df50800000000000000
+      internalID: 6905320798704311440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stress-bar_8
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 1
+        width: 4
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67df185feb90d7f00800000000000000
+      internalID: 1116058998425124214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stress-bar_9
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 1
+        width: 4
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cdc108b5fef6ce60800000000000000
+      internalID: 7982347720868351426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stress-bar_10
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 0
+        width: 4
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 910281e28118a8a60800000000000000
+      internalID: 7677090455658962969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

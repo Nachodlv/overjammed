@@ -1,8 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using DefaultNamespace;
 using Interactables;
 using Player;
 using UnityEngine;
@@ -70,6 +68,7 @@ namespace Programmer
 
         private void UpdateStressLevel()
         {
+            if(StressLevel >= MAX_STRESS_LEVEL) return;
             if (_necessitiesOnNeed.Count == 0)
             {
                 var newStress = StressLevel - stressDecreaseRatio * Time.deltaTime;
@@ -80,8 +79,6 @@ namespace Programmer
             {
                 StressLevel += _necessitiesOnNeed[i].StressLevel * Time.deltaTime;
             }
-            Debug.Log($"Stress level: {StressLevel}");
-            if(StressLevel >= MAX_STRESS_LEVEL) Debug.Log("Game Over");
         }
 
         private IEnumerator ActiveNextNecessity(Necessity necessity)
