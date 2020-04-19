@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using Player;
+using Sound;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -13,6 +14,7 @@ namespace Interactables
         [SerializeField, ColorUsage(true, true)] private Color notWorkingColor;
         [SerializeField] private float minimumSecondsBeforeBreaking;
         [SerializeField] private float maximumSecondsBeforeBreaking;
+        [SerializeField] private AudioClip soundOnBreak;
         
         public event Action OnStartWorking;
         public event Action OnStopWorking;
@@ -52,6 +54,7 @@ namespace Interactables
             yield return new WaitForSeconds(breakingTime);
             _isWorking = false;
             _material.color = notWorkingColor;
+            AudioManager.Instance.PlaySound(soundOnBreak);
             OnStopWorking?.Invoke();
         }
     }

@@ -3080,6 +3080,7 @@ MonoBehaviour:
   notWorkingColor: {r: 1.4980392, g: 0, b: 0, a: 1}
   minimumSecondsBeforeBreaking: 5
   maximumSecondsBeforeBreaking: 10
+  soundOnBreak: {fileID: 8300000, guid: 86f7e3188e3c15576ade3261f460f7b9, type: 3}
 --- !u!114 &1743527752
 MonoBehaviour:
   m_ObjectHideFlags: 0
