@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions.Comparers;
+using UnityEngine.UIElements;
 
 namespace Utils
 {
@@ -36,6 +38,24 @@ namespace Utils
         public void ResetColliders()
         {
             _colliders.Clear();
+        }
+
+        public Transform GetNearestCollider(Vector2 position)
+        {
+            if (_colliders.Count == 0) return null;
+            if (_colliders.Count == 1) return _colliders[0];
+            
+            var minDistance = float.MaxValue;
+            var colliderIndex = 0;
+            for (var i = 0; i < _colliders.Count; i++)
+            {
+                var distance = Vector2.Distance(_colliders[i].position, position);
+                if(distance > minDistance) continue;
+                minDistance = distance;
+                colliderIndex = i;
+            }
+
+            return _colliders[colliderIndex];
         }
         
         public void ChangeDetectionDistance(float newDistance)

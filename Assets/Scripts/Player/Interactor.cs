@@ -17,8 +17,10 @@ namespace Player
         private DistanceDetector _distanceDetector;
         private Interactable _currentHighlighted;
         private bool _hasHighlighted;
+        private Transform _transform;
         private void Awake()
         {
+            _transform = transform;
             Grabber = GetComponent<Grabber>();
             SetUpDistanceDetector();
         }
@@ -26,6 +28,7 @@ namespace Player
         private void Update()
         {
             if(Input.GetButtonDown("Fire1")) Interact();
+            HighlightNearestInteractable();
         }
 
         private void Interact()
@@ -37,9 +40,10 @@ namespace Player
                 Grabber.Grab(grabbable);
         }
 
-        private void HighlightNearestInteractable(Collider2D collider2D)
+        private void HighlightNearestInteractable()
         {
-            var interactable = collider2D.GetComponent<Interactable>();
+            if (_distanceDetector.GetColliders().Count == 0) return;
+            var interactable = _distanceDetector.GetNearestCollider(_transform.position).GetComponent<Interactable>();
             if(_hasHighlighted) _currentHighlighted.UnHighlight();
             interactable.Highlight();
             _currentHighlighted = interactable;
@@ -60,7 +64,6 @@ namespace Player
             _distanceDetector = gameObject.AddComponent<DistanceDetector>();
             _distanceDetector.DetectionDistance = interactReach;
             _distanceDetector.targetTag = interactableTag;
-            _distanceDetector.OnColliderInsideRadius += HighlightNearestInteractable;
             _distanceDetector.OnColliderOutsideRadius += UnHighlightInteractable;
         }
     }
