@@ -14,20 +14,19 @@ namespace Programmer
 
         [SerializeField] private NecessityDisplayer _necessityDisplayer;
         [SerializeField] private float stressDecreaseRatio = 1f;
-
-        public event Action<Interactor> OnInteract;
         public float StressLevel { get; private set; }
 
         private Necessity[] _necessities;
         private List<Necessity> _necessitiesOnNeed;
         private Func<Necessity, IEnumerator> _activeNextNecessity;
+        private ProgrammerAnimator _programmerAnimator;
         
         private void Awake()
         {
             _necessities = GetComponentsInChildren<Necessity>();
+            _programmerAnimator = GetComponentInChildren<ProgrammerAnimator>();
             _activeNextNecessity = ActiveNextNecessity;
             _necessitiesOnNeed = new List<Necessity>(_necessities.Length);
-            GetComponent<Interactable>().OnInteract += OnInteract;
             SubscribeToOnNeed();
         }
 
@@ -51,6 +50,7 @@ namespace Programmer
             {
                 _necessityDisplayer.DisplayNecessity(necessity);
                 necessity.Active = true;
+                _programmerAnimator.PutArmsUp();
             }
             _necessitiesOnNeed.Add(necessity);
         }
@@ -62,8 +62,10 @@ namespace Programmer
             {
                 _necessityDisplayer.DisplayNecessity(_necessitiesOnNeed[0]);
                 StartCoroutine(_activeNextNecessity(_necessitiesOnNeed[0]));
+                return;
             }
-            else _necessityDisplayer.HideNecessity();
+            _necessityDisplayer.HideNecessity();
+            _programmerAnimator.PutArmsDown();
         }
 
         private void UpdateStressLevel()
