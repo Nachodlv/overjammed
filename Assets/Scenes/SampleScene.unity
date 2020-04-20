@@ -446,6 +446,11 @@ PrefabInstance:
       propertyPath: increaseRatio
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2243849459279314249, guid: 76f509d55419d12c49eb67e3fa05a943,
+        type: 3}
+      propertyPath: globalLight
+      value: 
+      objectReference: {fileID: 1966696623}
     - target: {fileID: 3741272909098468367, guid: 76f509d55419d12c49eb67e3fa05a943,
         type: 3}
       propertyPath: m_IsActive
@@ -859,7 +864,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 112be0511c1f03e46b30c0d5d1f51915, type: 2}
+  - {fileID: 2100000, guid: 7803b93a5db9de829aef840d6d37f099, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1513,6 +1518,11 @@ PrefabInstance:
       propertyPath: increaseRatio
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2243849459279314249, guid: 76f509d55419d12c49eb67e3fa05a943,
+        type: 3}
+      propertyPath: globalLight
+      value: 
+      objectReference: {fileID: 1966696623}
     - target: {fileID: 3741272909098468366, guid: 76f509d55419d12c49eb67e3fa05a943,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -3335,6 +3345,11 @@ PrefabInstance:
       propertyPath: increaseRatio
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2243849459279314249, guid: 76f509d55419d12c49eb67e3fa05a943,
+        type: 3}
+      propertyPath: globalLight
+      value: 
+      objectReference: {fileID: 1966696623}
     - target: {fileID: 3741272909098468366, guid: 76f509d55419d12c49eb67e3fa05a943,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -3413,12 +3428,12 @@ PrefabInstance:
     - target: {fileID: 3741272910133810704, guid: 76f509d55419d12c49eb67e3fa05a943,
         type: 3}
       propertyPath: m_Offset.y
-      value: -0.48295093
+      value: -0.5888233
       objectReference: {fileID: 0}
     - target: {fileID: 3741272910133810704, guid: 76f509d55419d12c49eb67e3fa05a943,
         type: 3}
       propertyPath: m_Size.y
-      value: 1.0007668
+      value: 0.78902197
       objectReference: {fileID: 0}
     - target: {fileID: 3741272910133810704, guid: 76f509d55419d12c49eb67e3fa05a943,
         type: 3}
@@ -4182,7 +4197,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 87f7576be4e95005d93e4e7a37bd65c9, type: 2}
+  - {fileID: 2100000, guid: 32f62ef63781182399ba30ca869188be, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4549,7 +4564,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2036451326}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -5218,6 +5233,11 @@ PrefabInstance:
       propertyPath: increaseRatio
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2243849459279314249, guid: 76f509d55419d12c49eb67e3fa05a943,
+        type: 3}
+      propertyPath: globalLight
+      value: 
+      objectReference: {fileID: 1966696623}
     - target: {fileID: 3741272909098468367, guid: 76f509d55419d12c49eb67e3fa05a943,
         type: 3}
       propertyPath: m_IsActive

@@ -31,3 +31,4 @@ Material:
     m_Floats: []
     m_Colors:
     - Color_D3BDA914: {r: 1.4980392, g: 1.4980392, b: 1.4980392, a: 1}
+    - _Color: {r: 1.4980392, g: 0.0627451, b: 0, a: 0}

@@ -5,6 +5,7 @@ using Programmer.Necessities.Feelings;
 using Sound;
 using UI;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering.Universal;
 using Random = UnityEngine.Random;
 
 namespace Programmer.Necessities
@@ -14,13 +15,17 @@ namespace Programmer.Necessities
         [SerializeField] private Feeling[] feelings;
         [SerializeField] private Interactable interactable;
         [SerializeField] private KeyCombinationDisplayer keyCombinationDisplayer;
-
+        [SerializeField] private Light2D globalLight;
+        [SerializeField] private float lightIntensityWhenTalking = 0.4f;
+        
         private Feeling _currentFeeling;
         private bool _listeningKeys;
         private int _currentKey;
         private Mover _mover;
+        private float _initialLightIntensity;
         private void Awake()
         {
+            _initialLightIntensity = globalLight.intensity;
             interactable.OnInteract += Interact;
             OnActive += MakeSound;
         }
@@ -70,6 +75,7 @@ namespace Programmer.Necessities
             _mover.Active = false;
             keyCombinationDisplayer.ShowKeyCombination(_currentFeeling.Keys);
             _listeningKeys = true;
+            HighlightProgrammer();
         }
 
         private void StopListeningToKeys()
@@ -78,6 +84,17 @@ namespace Programmer.Necessities
             _mover.Active = true;
             _currentKey = 0;
             keyCombinationDisplayer.HideKeyCombination();
+            UnHighlightProgrammer();
+        }
+
+        private void HighlightProgrammer()
+        {
+            globalLight.intensity = lightIntensityWhenTalking;
+        }
+
+        private void UnHighlightProgrammer()
+        {
+            globalLight.intensity = _initialLightIntensity;
         }
     }
 }
