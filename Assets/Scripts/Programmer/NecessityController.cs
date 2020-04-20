@@ -78,12 +78,12 @@ namespace Programmer
         private void UpdateStressLevel()
         {
             if(StressLevel >= MAX_STRESS_LEVEL) OnMaxStressLevel?.Invoke();
-            if (_necessitiesOnNeed.Count == 0)
-            {
+            // if (_necessitiesOnNeed.Count == 0)
+            // {
                 var newStress = StressLevel - stressDecreaseRatio * Time.deltaTime;
                 StressLevel = newStress < 0 ? 0 : newStress;
-                return;
-            }
+            //     return;
+            // }
             for (var i = 0; i < _necessitiesOnNeed.Count; i++)
             {
                 StressLevel += _necessitiesOnNeed[i].StressLevel * Time.deltaTime;

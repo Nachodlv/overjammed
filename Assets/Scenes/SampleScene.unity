@@ -492,6 +492,8 @@ GameObject:
   - component: {fileID: 146031768}
   - component: {fileID: 146031769}
   - component: {fileID: 146031763}
+  - component: {fileID: 146031770}
+  - component: {fileID: 146031765}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -499,8 +501,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!61 &146031763
-BoxCollider2D:
+--- !u!70 &146031763
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -512,19 +514,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0035005212, y: -0.4623654}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.69924796, y: 0.241858}
-  m_EdgeRadius: 0
+  m_Offset: {x: -0.24, y: -0.51823395}
+  m_Size: {x: 0.16, y: 0.16}
+  m_Direction: 0
 --- !u!4 &146031764
 Transform:
   m_ObjectHideFlags: 0
@@ -540,6 +532,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &146031765
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146031762}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.019695342, y: -0.51745087}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.36616743, y: 0.11549914}
+  m_EdgeRadius: 0
 --- !u!114 &146031766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -602,6 +620,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 2036451328}
+--- !u!70 &146031770
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146031762}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.2237361, y: -0.5003289}
+  m_Size: {x: 0.15641904, y: 0.15641904}
+  m_Direction: 0
 --- !u!1 &163725315
 GameObject:
   m_ObjectHideFlags: 0
@@ -703,11 +737,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3741272909252223098, guid: 76f509d55419d12c49eb67e3fa05a943,
         type: 3}
-      propertyPath: stressLevel
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3741272909252223098, guid: 76f509d55419d12c49eb67e3fa05a943,
-        type: 3}
       propertyPath: increaseRatio
       value: 1
       objectReference: {fileID: 0}
@@ -721,11 +750,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
-    - target: {fileID: 3741272910020211101, guid: 76f509d55419d12c49eb67e3fa05a943,
-        type: 3}
-      propertyPath: stressLevel
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 3741272910020211101, guid: 76f509d55419d12c49eb67e3fa05a943,
         type: 3}
       propertyPath: increaseRatio
@@ -801,11 +825,6 @@ PrefabInstance:
       propertyPath: turnable
       value: 
       objectReference: {fileID: 1743527751}
-    - target: {fileID: 3741272910520885773, guid: 76f509d55419d12c49eb67e3fa05a943,
-        type: 3}
-      propertyPath: stressLevel
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3741272910842977392, guid: 76f509d55419d12c49eb67e3fa05a943,
         type: 3}
       propertyPath: m_IsActive
@@ -1211,8 +1230,8 @@ MonoBehaviour:
   audioClip: {fileID: 8300000, guid: 9d601b940321c7a42afb51e72cc916c5, type: 3}
   workingColor: {r: 0, g: 2, b: 0, a: 1}
   notWorkingColor: {r: 1.4980392, g: 0, b: 0, a: 1}
-  minimumSecondsBeforeBreaking: 10
-  maximumSecondsBeforeBreaking: 15
+  minimumSecondsBeforeBreaking: 20
+  maximumSecondsBeforeBreaking: 30
   soundOnBreak: {fileID: 0}
 --- !u!1 &326793681
 GameObject:
@@ -1762,7 +1781,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: a2f32796a3cbac2819b5f1b1a5703d4b, type: 3}
-  stressLevel: 1
+  stressLevel: 3
   startingNeed: 0
   increaseRatio: 3
   turnable: {fileID: 275403066}
@@ -1872,16 +1891,6 @@ PrefabInstance:
         type: 3}
       propertyPath: increaseRatio
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3741272909252223098, guid: 76f509d55419d12c49eb67e3fa05a943,
-        type: 3}
-      propertyPath: stressLevel
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3741272910020211101, guid: 76f509d55419d12c49eb67e3fa05a943,
-        type: 3}
-      propertyPath: stressLevel
-      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3741272910020211101, guid: 76f509d55419d12c49eb67e3fa05a943,
         type: 3}
@@ -1994,11 +2003,6 @@ PrefabInstance:
       propertyPath: turnable
       value: 
       objectReference: {fileID: 1743527751}
-    - target: {fileID: 3741272910520885773, guid: 76f509d55419d12c49eb67e3fa05a943,
-        type: 3}
-      propertyPath: stressLevel
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3741272910580998759, guid: 76f509d55419d12c49eb67e3fa05a943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2025,11 +2029,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: ebbda5159a4ae7d7ebb74d52eebd57f5,
         type: 3}
-    - target: {fileID: 3741272910842977394, guid: 76f509d55419d12c49eb67e3fa05a943,
-        type: 3}
-      propertyPath: stressLevel
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 3741272910842977394, guid: 76f509d55419d12c49eb67e3fa05a943,
         type: 3}
       propertyPath: increaseRatio
@@ -5133,8 +5132,8 @@ MonoBehaviour:
   audioClip: {fileID: 8300000, guid: 6a6ee1a6b8609c5469d2afc5e3a9e4a1, type: 3}
   workingColor: {r: 0, g: 2, b: 0, a: 1}
   notWorkingColor: {r: 1.4980392, g: 0, b: 0, a: 1}
-  minimumSecondsBeforeBreaking: 10
-  maximumSecondsBeforeBreaking: 15
+  minimumSecondsBeforeBreaking: 15
+  maximumSecondsBeforeBreaking: 20
   soundOnBreak: {fileID: 8300000, guid: 417975c5b4a28e31885f65c976453b34, type: 3}
 --- !u!114 &1743527752
 MonoBehaviour:
@@ -6344,11 +6343,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3741272909252223098, guid: 76f509d55419d12c49eb67e3fa05a943,
         type: 3}
-      propertyPath: stressLevel
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3741272909252223098, guid: 76f509d55419d12c49eb67e3fa05a943,
-        type: 3}
       propertyPath: increaseRatio
       value: 0.5
       objectReference: {fileID: 0}
@@ -6359,13 +6353,13 @@ PrefabInstance:
       objectReference: {fileID: 519420031}
     - target: {fileID: 3741272910020211101, guid: 76f509d55419d12c49eb67e3fa05a943,
         type: 3}
-      propertyPath: stressLevel
-      value: 0.5
+      propertyPath: increaseRatio
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3741272910020211101, guid: 76f509d55419d12c49eb67e3fa05a943,
         type: 3}
-      propertyPath: increaseRatio
-      value: 3
+      propertyPath: startingNeed
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 3741272910133810705, guid: 76f509d55419d12c49eb67e3fa05a943,
         type: 3}
@@ -6432,21 +6426,11 @@ PrefabInstance:
       propertyPath: turnable
       value: 
       objectReference: {fileID: 1743527751}
-    - target: {fileID: 3741272910520885773, guid: 76f509d55419d12c49eb67e3fa05a943,
-        type: 3}
-      propertyPath: stressLevel
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3741272910842977394, guid: 76f509d55419d12c49eb67e3fa05a943,
         type: 3}
       propertyPath: animator
       value: 
       objectReference: {fileID: 2118686486}
-    - target: {fileID: 3741272910842977394, guid: 76f509d55419d12c49eb67e3fa05a943,
-        type: 3}
-      propertyPath: stressLevel
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 3741272910842977394, guid: 76f509d55419d12c49eb67e3fa05a943,
         type: 3}
       propertyPath: increaseRatio
