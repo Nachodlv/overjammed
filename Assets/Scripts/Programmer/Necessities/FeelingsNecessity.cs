@@ -23,8 +23,10 @@ namespace Programmer.Necessities
         private int _currentKey;
         private Mover _mover;
         private float _initialLightIntensity;
-        private void Awake()
+
+        protected override void Awake()
         {
+            base.Awake();
             _initialLightIntensity = globalLight.intensity;
             interactable.OnInteract += Interact;
             OnActive += MakeSound;

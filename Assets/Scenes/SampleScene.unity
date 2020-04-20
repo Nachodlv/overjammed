@@ -691,6 +691,11 @@ PrefabInstance:
       propertyPath: globalLight
       value: 
       objectReference: {fileID: 1966696623}
+    - target: {fileID: 2243849459279314249, guid: 76f509d55419d12c49eb67e3fa05a943,
+        type: 3}
+      propertyPath: startingNeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3741272909098468367, guid: 76f509d55419d12c49eb67e3fa05a943,
         type: 3}
       propertyPath: m_IsActive
@@ -704,7 +709,12 @@ PrefabInstance:
     - target: {fileID: 3741272909252223098, guid: 76f509d55419d12c49eb67e3fa05a943,
         type: 3}
       propertyPath: increaseRatio
-      value: 0.5
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3741272909252223098, guid: 76f509d55419d12c49eb67e3fa05a943,
+        type: 3}
+      propertyPath: startingNeed
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3741272909799508081, guid: 76f509d55419d12c49eb67e3fa05a943,
         type: 3}
@@ -720,6 +730,11 @@ PrefabInstance:
         type: 3}
       propertyPath: increaseRatio
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3741272910020211101, guid: 76f509d55419d12c49eb67e3fa05a943,
+        type: 3}
+      propertyPath: startingNeed
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3741272910133810705, guid: 76f509d55419d12c49eb67e3fa05a943,
         type: 3}
@@ -890,6 +905,49 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 174410101}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &178046853
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 178046855}
+  - component: {fileID: 178046854}
+  m_Layer: 0
+  m_Name: Level manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &178046854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 178046853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1553156104104c21aad4969791886ba7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &178046855
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 178046853}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 44.439842, y: 66.095764, z: -205.875}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &258141589
 GameObject:
   m_ObjectHideFlags: 0
@@ -1705,6 +1763,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: a2f32796a3cbac2819b5f1b1a5703d4b, type: 3}
   stressLevel: 1
+  startingNeed: 0
   increaseRatio: 3
   turnable: {fileID: 275403066}
 --- !u!1001 &471343425
@@ -1764,6 +1823,11 @@ PrefabInstance:
       propertyPath: globalLight
       value: 
       objectReference: {fileID: 1966696623}
+    - target: {fileID: 2243849459279314249, guid: 76f509d55419d12c49eb67e3fa05a943,
+        type: 3}
+      propertyPath: startingNeed
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 3741272909098468366, guid: 76f509d55419d12c49eb67e3fa05a943,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -1807,7 +1871,7 @@ PrefabInstance:
     - target: {fileID: 3741272909252223098, guid: 76f509d55419d12c49eb67e3fa05a943,
         type: 3}
       propertyPath: increaseRatio
-      value: 0.1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3741272909252223098, guid: 76f509d55419d12c49eb67e3fa05a943,
         type: 3}
@@ -1823,6 +1887,11 @@ PrefabInstance:
         type: 3}
       propertyPath: increaseRatio
       value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3741272910020211101, guid: 76f509d55419d12c49eb67e3fa05a943,
+        type: 3}
+      propertyPath: startingNeed
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3741272910133810704, guid: 76f509d55419d12c49eb67e3fa05a943,
         type: 3}
@@ -4005,7 +4074,7 @@ PrefabInstance:
     - target: {fileID: 3741272909252223098, guid: 76f509d55419d12c49eb67e3fa05a943,
         type: 3}
       propertyPath: increaseRatio
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3741272909799508081, guid: 76f509d55419d12c49eb67e3fa05a943,
         type: 3}
@@ -4021,6 +4090,11 @@ PrefabInstance:
         type: 3}
       propertyPath: increaseRatio
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3741272910020211101, guid: 76f509d55419d12c49eb67e3fa05a943,
+        type: 3}
+      propertyPath: startingNeed
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3741272910133810704, guid: 76f509d55419d12c49eb67e3fa05a943,
         type: 3}
@@ -5243,6 +5317,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: -3933295048775706725, guid: 3c1dd58ed3104b44d9f247a47cbb0dc2, type: 3}
   stressLevel: 1
+  startingNeed: 0
   increaseRatio: 5
   stressBall: {fileID: 1591868008}
   interactable: {fileID: 924367468}
@@ -6275,7 +6350,7 @@ PrefabInstance:
     - target: {fileID: 3741272909252223098, guid: 76f509d55419d12c49eb67e3fa05a943,
         type: 3}
       propertyPath: increaseRatio
-      value: 0.1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3741272909799508081, guid: 76f509d55419d12c49eb67e3fa05a943,
         type: 3}

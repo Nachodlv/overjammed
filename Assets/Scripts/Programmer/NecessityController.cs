@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DefaultNamespace;
 using Interactables;
 using Player;
 using UnityEngine;
@@ -29,6 +30,11 @@ namespace Programmer
             _activeNextNecessity = ActiveNextNecessity;
             _necessitiesOnNeed = new List<Necessity>(_necessities.Length);
             SubscribeToOnNeed();
+        }
+
+        private void Start()
+        {
+            stressDecreaseRatio /= LevelManager.Instance.Level;
         }
 
         private void Update()

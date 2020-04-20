@@ -8,8 +8,10 @@ namespace Programmer.Necessities
     {
         [SerializeField] private ItemType itemType;
         [SerializeField] private Interactable interactable;
-        private void Awake()
+
+        protected override void Awake()
         {
+            base.Awake();
             interactable.OnInteract += Interact;
         }
 

@@ -10,6 +10,7 @@ namespace Programmer
         [SerializeField, Tooltip("How much it affect the stress level")]
         private float stressLevel;
 
+        [SerializeField] private float startingNeed;
         [SerializeField] protected float increaseRatio = 5f;
 
         public delegate void NeedChange(Necessity necessityOnNeed);
@@ -40,6 +41,11 @@ namespace Programmer
         protected float MinimumNeed = 50;
         private bool _invokedNeed;
         private bool _active;
+
+        protected virtual void Awake()
+        {
+            CurrentNeed = startingNeed;
+        }
 
         protected virtual void Update()
         {

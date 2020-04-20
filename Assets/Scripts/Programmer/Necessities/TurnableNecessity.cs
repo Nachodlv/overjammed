@@ -8,8 +8,9 @@ namespace Programmer.Necessities
     {
         [SerializeField] private Turnable turnable;
         
-        private void Awake()
+        protected override void Awake()
         {
+            base.Awake();
             turnable.OnStartWorking += StartWorking;
             turnable.OnStopWorking += StopWorking;
             increaseRatio = 0;

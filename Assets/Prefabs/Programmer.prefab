@@ -300,6 +300,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: ab31c3914aa776c98becf7c3181fa3db, type: 3}
   stressLevel: 3
+  startingNeed: 0
   increaseRatio: 3
   itemType: 1
   interactable: {fileID: 3741272910133810711}
@@ -522,6 +523,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 1a4129874460b91eab3eb77860960c3e, type: 3}
   stressLevel: 4
+  startingNeed: 0
   increaseRatio: 5
   itemType: 0
   interactable: {fileID: 3741272910133810711}
@@ -576,7 +578,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _necessityDisplayer: {fileID: 3741272909098468371}
-  stressDecreaseRatio: 5
+  stressDecreaseRatio: 7
 --- !u!114 &3741272910133810708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -688,6 +690,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 5a22bfef168de9e47b355be3155fc564, type: 3}
   stressLevel: 2
+  startingNeed: 0
   increaseRatio: 5
   turnable: {fileID: 0}
 --- !u!1 &3741272910580998756
@@ -843,6 +846,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: d5bf736b1c3a24bb4a2c7d1dc2c06e0e, type: 3}
   stressLevel: 2
+  startingNeed: 0
   increaseRatio: 5
   interactable: {fileID: 3741272910133810711}
   satisfyClip: {fileID: 8300000, guid: 4ae2683834c21794d982f44518609f93, type: 3}
@@ -985,6 +989,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 0}
   stressLevel: 1
+  startingNeed: 0
   increaseRatio: 7
   feelings:
   - {fileID: 1828706199912523938, guid: 7314db4b6671209ae952efaf110ff3d3, type: 3}
@@ -993,6 +998,8 @@ MonoBehaviour:
   - {fileID: 579566268950222981, guid: 6d9e5f4dfc4d835b5853b100cdc852c6, type: 3}
   interactable: {fileID: 3741272910133810711}
   keyCombinationDisplayer: {fileID: 7540042064743027914}
+  globalLight: {fileID: 0}
+  lightIntensityWhenTalking: 0.4
 --- !u!1 &5559987762905145002
 GameObject:
   m_ObjectHideFlags: 0

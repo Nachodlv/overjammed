@@ -9,9 +9,11 @@ namespace Programmer.Necessities
         [SerializeField] private StressBall stressBall;
         [SerializeField] private Interactable interactable;
 
-        private bool ballThrew;        
-        private void Awake()
+        private bool ballThrew;
+
+        protected override void Awake()
         {
+            base.Awake();
             interactable.OnInteract += Interact;
             stressBall.OnThrow += BallThrew;
             increaseRatio = 0;

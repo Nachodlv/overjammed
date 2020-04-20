@@ -17,8 +17,9 @@ namespace Programmer.Necessities
         private static readonly int NeedTrigger = Animator.StringToHash("need");
         private static readonly int SatisfyTrigger = Animator.StringToHash("satisfy");
 
-        private void Awake()
+        protected override void Awake()
         {
+            base.Awake();
             interactable.OnInteract += Interact;
             _hasAnimator = animator != null;
             _hasSatisfyClip = satisfyClip != null;

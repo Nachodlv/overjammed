@@ -54,6 +54,7 @@ namespace DefaultNamespace
         private void Win()
         {
             if (_gameOver) return;
+            LevelManager.Instance.NextLevel();
             _gameOver = true;
             winPanel.StartSlides();
             AudioManager.Instance.SoundEffectsMuted = true;
