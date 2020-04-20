@@ -16,6 +16,7 @@ namespace DefaultNamespace
         [SerializeField] private float hours;
         [SerializeField] private float actualMinutes;
         [SerializeField] private PanelsSlide gameOverPanel;
+        [SerializeField] private PanelsSlide winPanel;
         [SerializeField] private AudioClip mainGameAudio;
         
         private float _timeMultiplier;
@@ -27,6 +28,7 @@ namespace DefaultNamespace
             _minutesRemaining = hours * 60;
             _timeMultiplier =  _minutesRemaining / actualMinutes;
             gameOverPanel.onFinishSlides.AddListener(GoToMenu);
+            winPanel.onFinishSlides.AddListener(GoToMenu);
             foreach (var programmer in programmers)
             {
                 programmer.OnMaxStressLevel += GameOver;
@@ -46,8 +48,17 @@ namespace DefaultNamespace
             timeDisplayer.text = $"{hours}h {minutes}m";
             actualMinutes -= Time.deltaTime / 60;
             _minutesRemaining = _timeMultiplier * actualMinutes;
+            if(actualMinutes <= 0) Win();
         }
 
+        private void Win()
+        {
+            if (_gameOver) return;
+            _gameOver = true;
+            winPanel.StartSlides();
+            AudioManager.Instance.SoundEffectsMuted = true;
+        }
+        
         private void GameOver()
         {
             if (_gameOver) return;
