@@ -12,7 +12,8 @@ namespace UI
         [SerializeField] private Sprite unPausedSprite;
         [SerializeField] private AudioClip buttonClicked;
         [SerializeField] private GameObject pausedPanel;
-        
+        [SerializeField] private AudioSource audioSource;
+
         private Button _button;
         private Image _image;
         private bool paused;
@@ -33,9 +34,13 @@ namespace UI
                 Time.timeScale = 1;
                 paused = false;
                 pausedPanel.SetActive(false);
+                audioSource.Stop();
+                AudioManager.Instance.UnMute();
             }
             else
             {
+                AudioManager.Instance.Mute();
+                audioSource.Play();
                 _image.sprite = pausedSprite;
                 Time.timeScale = 0;
                 paused = true;
