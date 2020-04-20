@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Audio;
 using UnityEngine;
 using Utils;
 
@@ -11,6 +12,7 @@ namespace Sound
         [SerializeField] private int audioSourceQuantity;
         [SerializeField] private AudioSourcePooleable audioSourcePrefab;
         [SerializeField] private AudioClip mainMusic;
+        [SerializeField] private float fadeTime = 2f;
         
         public static AudioManager Instance;
         public bool Muted { get; private set; }
@@ -50,6 +52,14 @@ namespace Sound
             audioSource.SetVolume(volume);
             audioSource.StartClip();
         }
+
+        public void PlaySoundWithFade(AudioClip clip, float volume)
+        {
+            if (Muted || SoundEffectsMuted) return;
+            var audioSource = _pooler.GetNextObject();
+            audioSource.SetClip(clip);
+            StartCoroutine(AudioFades.FadeIn(audioSource.AudioSource, fadeTime, volume));
+        } 
         
         public void PlaySound(AudioClip clip)
         {
@@ -73,6 +83,16 @@ namespace Sound
             _audioSource.clip = clip;
             mainMusic = clip;
             if(!Muted) _audioSource.Play();
+        }
+
+        public void FadeOutClip()
+        {
+            StartCoroutine(AudioFades.FadeOut(_audioSource, fadeTime));
+        }
+
+        public void FadeOutClip(float velocity)
+        {
+            StartCoroutine(AudioFades.FadeOut(_audioSource, velocity));
         }
 
         public void PoolAudioSources()

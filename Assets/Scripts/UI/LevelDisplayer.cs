@@ -17,7 +17,7 @@ namespace UI
 
         private void Start()
         {
-            _text.text = LevelManager.Instance.Level > 1 ? $"Recursion: {LevelManager.Instance.Level}" : "";
+            _text.text = LevelManager.Instance.Level > 1 ? LevelManager.Instance.Level.ToString() : "";
         }
     }
 }

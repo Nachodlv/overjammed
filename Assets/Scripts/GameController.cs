@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using Programmer;
 using Sound;
 using TMPro;
@@ -18,6 +19,8 @@ namespace DefaultNamespace
         [SerializeField] private PanelsSlide gameOverPanel;
         [SerializeField] private PanelsSlide winPanel;
         [SerializeField] private AudioClip mainGameAudio;
+        [SerializeField] private AudioClip gameOverSound;
+        [SerializeField] private Interference interference;
         
         private float _timeMultiplier;
         private float _minutesRemaining;
@@ -28,7 +31,8 @@ namespace DefaultNamespace
             _minutesRemaining = hours * 60;
             _timeMultiplier =  _minutesRemaining / actualMinutes;
             gameOverPanel.onFinishSlides.AddListener(GoToMenu);
-            winPanel.onFinishSlides.AddListener(GoToMenu);
+            winPanel.onFinishSlides.AddListener(interference.ShowInterference);
+            interference.OnFinishInterferation += GoToMenu;
             foreach (var programmer in programmers)
             {
                 programmer.OnMaxStressLevel += GameOver;
@@ -65,9 +69,12 @@ namespace DefaultNamespace
             if (_gameOver) return;
             _gameOver = true;
             gameOverPanel.StartSlides();
+            AudioManager.Instance.FadeOutClip();
+            AudioManager.Instance.PlaySoundWithFade(gameOverSound, 0.5f);
             AudioManager.Instance.SoundEffectsMuted = true;
         }
 
+        
         private void GoToMenu()
         {
             AudioManager.Instance.SoundEffectsMuted = false;

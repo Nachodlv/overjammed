@@ -15,6 +15,7 @@ namespace Interactables
         [SerializeField] private float minimumSecondsBeforeBreaking;
         [SerializeField] private float maximumSecondsBeforeBreaking;
         [SerializeField] private AudioClip soundOnBreak;
+        [SerializeField] private Animator turnableAnimator;
         
         public event Action OnStartWorking;
         public event Action OnStopWorking;
@@ -24,7 +25,10 @@ namespace Interactables
         private bool _isWorking = true;
         private Coroutine _coroutine;
         private bool _hasAudio;
-        
+        private bool _hasTurnableAnimator;
+        private static readonly int StartWorkingTrigger = Animator.StringToHash("start-working");
+        private static readonly int StopWorkingTrigger = Animator.StringToHash("stop-working");
+
         protected override void Awake()
         {
             base.Awake();
@@ -33,6 +37,8 @@ namespace Interactables
             _material.color = workingColor;
             CalculateBreakingTime();
             _hasAudio = soundOnBreak != null;
+            _hasTurnableAnimator = turnableAnimator != null;
+            if(_hasTurnableAnimator) turnableAnimator.SetTrigger(StartWorkingTrigger);
         }
 
         public override void Interact(Interactor interactor)
@@ -41,6 +47,7 @@ namespace Interactables
             base.Interact(interactor);
             _material.color = workingColor;
             OnStartWorking?.Invoke();
+            if(_hasTurnableAnimator) turnableAnimator.SetTrigger(StartWorkingTrigger);
             CalculateBreakingTime();
         }
 
@@ -58,6 +65,7 @@ namespace Interactables
             _material.color = notWorkingColor;
             if(_hasAudio) AudioManager.Instance.PlaySound(soundOnBreak);
             OnStopWorking?.Invoke();
+            if(_hasTurnableAnimator) turnableAnimator.SetTrigger(StopWorkingTrigger);
         }
     }
 }
