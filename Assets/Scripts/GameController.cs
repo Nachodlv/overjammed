@@ -9,7 +9,7 @@ namespace DefaultNamespace
     public class GameController: MonoBehaviour
     {
         [SerializeField] private NecessityController[] programmers;
-        [SerializeField] private TextMeshProUGUI timeDisplayer;
+        [SerializeField] private Text timeDisplayer;
         [SerializeField] private float hours;
         [SerializeField] private float actualMinutes;
         
