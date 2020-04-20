@@ -972,6 +972,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1260289222}
+        m_MethodName: ChangeClip
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 98f3afdb39ed409629c73d41de0ed303,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1260289221
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -979,6 +991,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4256696540068979437, guid: 91b7a4b79dda1f3af86f4c52307af956,
+        type: 3}
+      propertyPath: mainMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: c459c4e87034598df88b2eae1fc7578d, type: 3}
     - target: {fileID: 4256696540068979438, guid: 91b7a4b79dda1f3af86f4c52307af956,
         type: 3}
       propertyPath: m_Name

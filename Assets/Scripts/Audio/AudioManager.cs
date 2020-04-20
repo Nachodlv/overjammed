@@ -20,8 +20,10 @@ namespace Sound
 
         private void Awake()
         {
+            _audioSource = GetComponent<AudioSource>();
             if (Instance != null)
             {
+                ChangeClip(mainMusic);
                 Destroy(gameObject);
             }
             else
@@ -30,7 +32,6 @@ namespace Sound
                 DontDestroyOnLoad(this);
             }
             
-            _audioSource = GetComponent<AudioSource>();
             PoolAudioSources();
         }
 
@@ -65,6 +66,13 @@ namespace Sound
         {
             _audioSource.UnPause();
             Muted = false;
+        }
+        
+        public void ChangeClip(AudioClip clip)
+        {
+            _audioSource.clip = clip;
+            mainMusic = clip;
+            _audioSource.Play();
         }
 
         public void PoolAudioSources()
