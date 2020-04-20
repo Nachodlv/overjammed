@@ -64,7 +64,7 @@ namespace Sound
 
         public void UnMute()
         {
-            _audioSource.UnPause();
+            _audioSource.Play();
             Muted = false;
         }
         
@@ -72,7 +72,7 @@ namespace Sound
         {
             _audioSource.clip = clip;
             mainMusic = clip;
-            _audioSource.Play();
+            if(!Muted) _audioSource.Play();
         }
 
         public void PoolAudioSources()

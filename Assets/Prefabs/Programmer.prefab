@@ -578,7 +578,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _necessityDisplayer: {fileID: 3741272909098468371}
-  stressDecreaseRatio: 7
+  stressDecreaseRatio: 6
 --- !u!114 &3741272910133810708
 MonoBehaviour:
   m_ObjectHideFlags: 0
