@@ -28,12 +28,16 @@ namespace Interactables
         private void Awake()
         {
             _initialPosition = transform.position;
-            grabbable.enabled = false;
             animator = GetComponent<Animator>();
             sortOrderModifier = GetComponent<SortOrderModifier>();
             interactable.OnInteract += Interact;
             _waitToThrowBall = WaitToThrowBall;
             StartCoroutine(_waitToThrowBall());
+        }
+
+        private void Start()
+        {
+            grabbable.Active = false;
         }
 
         public void ResetPosition()
@@ -42,6 +46,8 @@ namespace Interactables
             transform.position = _initialPosition;
             sortOrderModifier.ExtraYAxis = -0.1f;
             sortOrderModifier.PositionChanged();
+            ballOnGround = false;
+            grabbable.Active = false;
             StartCoroutine(_waitToThrowBall());
         }
 
@@ -61,7 +67,7 @@ namespace Interactables
         {
             sortOrderModifier.ExtraYAxis = 0.2f;
             sortOrderModifier.PositionChanged();
-            grabbable.enabled = true;
+            grabbable.Active = true;
             ballOnGround = true;
         }
         

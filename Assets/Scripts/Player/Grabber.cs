@@ -19,6 +19,7 @@ namespace Player
 
         public void Grab(Grabbable grabbable)
         {
+            if (!grabbable.Active) return;
             if (!HasGrabbable) image.enabled = true;
             
             Grabbable = grabbable;

@@ -53,7 +53,8 @@ namespace Player
             _velocity = newVelocity;
             var y = _velocity.y;
             var x = _velocity.x;
-            animator.SetFloat(YSpeed, y > 0 ? y : y - Mathf.Abs(x));
+            animator.SetFloat(YSpeed, y);
+            animator.SetFloat(XSpeed, x);
         }
     }
 }
