@@ -8,7 +8,7 @@ namespace UI
     public class PanelsSlide: MonoBehaviour
     {
         [SerializeField] private CanvasGroup[] panels;
-        [SerializeField] private float transitionTime;
+        [SerializeField] private float transitionTime = 1f;
         [SerializeField] private float secondsBlocked = 2f;
         
         public UnityEvent onFinishSlides;

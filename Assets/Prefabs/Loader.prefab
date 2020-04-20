@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4158804285084528704}
   - component: {fileID: 5519454227015503283}
   - component: {fileID: 5380915444499772659}
+  - component: {fileID: 6228482779500706223}
   m_Layer: 5
   m_Name: Loader
   m_TagString: Untagged
@@ -58,7 +59,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &5519454227015503283
 MonoBehaviour:
@@ -99,6 +100,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!225 &6228482779500706223
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1224519618729095344}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &6228482780390630572
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,7 +122,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6228482779773727386}
   - component: {fileID: 6228482780390630574}
-  - component: {fileID: 6228482779773727381}
   - component: {fileID: 6228482780390630575}
   m_Layer: 5
   m_Name: Panel
@@ -147,18 +159,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6228482780390630572}
   m_CullTransparentMesh: 0
---- !u!225 &6228482779773727381
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6228482780390630572}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!95 &6228482780390630575
 Animator:
   serializedVersion: 3

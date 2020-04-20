@@ -11,13 +11,15 @@ namespace Utils
         [SerializeField] private CanvasGroup loader;
         [SerializeField] private PanelsSlide panelsSlide;
 
-        private static SceneChanger _instance;
-        
+        public static SceneChanger Instance;
+
+        public CanvasGroup Loader => loader;
+
         private void Awake()
         {
-            if (_instance == null)
+            if (Instance == null)
             {
-                _instance = this;
+                Instance = this;
                 DontDestroyOnLoad(this);
                 DontDestroyOnLoad(loader);
             }
@@ -34,7 +36,7 @@ namespace Utils
             var asyncOperation = SceneManager.LoadSceneAsync(index);
             asyncOperation.completed += (operation) =>
             {
-                StopCoroutine(coroutine);
+                panelsSlide.StopCoroutine(coroutine);
                 loader.alpha = 1;
                 AudioManager.Instance.PoolAudioSources();
                 panelsSlide.HideMe(loader);

@@ -14,6 +14,7 @@ namespace Sound
         
         public static AudioManager Instance;
         public bool Muted { get; private set; }
+        public bool SoundEffectsMuted { get; set; }
 
         private AudioSource _audioSource;
         private ObjectPooler<AudioSourcePooleable> _pooler;
@@ -23,7 +24,6 @@ namespace Sound
             _audioSource = GetComponent<AudioSource>();
             if (Instance != null)
             {
-                ChangeClip(mainMusic);
                 Destroy(gameObject);
             }
             else
@@ -44,7 +44,7 @@ namespace Sound
 
         public void PlaySound(AudioClip clip, float volume = 1)
         {
-            if (Muted) return;
+            if (Muted || SoundEffectsMuted) return;
             var audioSource = _pooler.GetNextObject();
             audioSource.SetClip(clip);
             audioSource.SetVolume(volume);
