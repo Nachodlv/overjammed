@@ -88,7 +88,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -148,3 +148,4 @@ MonoBehaviour:
     type: 3}
   muteSprite: {fileID: 21300000, guid: 7cd13b6b8d49331e98f8e74a6595dec9, type: 3}
   muteSelectedSprite: {fileID: 21300000, guid: 98b40e9a18043ddc8bfc57be9f1a4ad1, type: 3}
+  clickSound: {fileID: 8300000, guid: 2b72d92e94aae8543ab846a750b74b94, type: 3}

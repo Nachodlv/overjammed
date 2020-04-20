@@ -11,6 +11,7 @@ namespace Sound
         [SerializeField] private Sprite unMuteSelectedSprite;
         [SerializeField] private Sprite muteSprite;
         [SerializeField] private Sprite muteSelectedSprite;
+        [SerializeField] private AudioClip clickSound;
 
         private Button _button;
         private Image _image;
@@ -29,8 +30,14 @@ namespace Sound
 
         private void OnClick()
         {
-            if(AudioManager.Instance.Muted) UnMute();
-            else Mute();
+            if (AudioManager.Instance.Muted)
+            {
+                UnMute();
+                AudioManager.Instance.PlaySound(clickSound);
+                return;
+            }
+            AudioManager.Instance.PlaySound(clickSound);
+            Mute();
         }
 
         private void Mute()
